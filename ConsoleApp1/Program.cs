@@ -1,5 +1,25 @@
 ﻿using System;
 using System.Windows.Input;
+public class PName
+{
+    string name; int cnt = 0;
+    string[] bots = {"Jack", "Asshley", "John", "Aaron", "Joshua", "Laura" };
+    public void PlayerName()
+    {
+        Console.WriteLine("Enter your name: \n");
+        name = Console.ReadLine();
+        Console.WriteLine("You will be remembered as: " + name);
+        Console.WriteLine("Let's choose your school (1-6): \n");
+        for (int i = 0; i < bots.Length; ++i)
+        {
+            Console.Write(bots[i] + " ");
+        }
+        Console.WriteLine();
+        cnt = Int32.Parse(Console.ReadLine());
+        --cnt;
+        Console.WriteLine("You chose " + bots[cnt] + " school. Let's start the game!");
+    }
+}
 public class ABC
 {
     int ID(int i)
@@ -104,7 +124,10 @@ class GFG
     public static void Main(string[] args)
     {
         var intro = new ABC();
+        var player = new PName();
+
         intro.Intro();
+        player.PlayerName();
         Console.Write("..." +
             "\n (option A)" +
             "\n (option B)");
@@ -205,7 +228,7 @@ class GFG
             }
             else
             {
-                Console.Write("\nYou Press 'A'" +
+                Console.Write("\nYou Press 'B'" +
                     "\n ..." +
                     "\n (option A)" +
                     "\n (option B)");
